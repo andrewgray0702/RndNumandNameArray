@@ -1,0 +1,11 @@
+<div class="nameContainer">
+  <input type="text" id="inputName" [(ngModel)]="inputNames">
+  <label for="inputName">Enter a name</label>
+  <button (click)="addName()">Add</button>
+  <ng-container *ngFor="let names of nameArr; let i = index">
+  <ul *ngIf="names != 'Mike'" class="nameList">
+    <li>Name: {{names}}</li>
+    <button (click)="deleteName(i)">Delete</button>
+  </ul>
+</ng-container>
+</div>
